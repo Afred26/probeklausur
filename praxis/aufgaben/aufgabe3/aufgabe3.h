@@ -5,7 +5,8 @@
 #include <vector>
 
 /// fügt vector m an vector n an.
-bool append(std::vector<int> &n, std::vector<int> m);
+std::vector<int> append(std::vector<int> n, std::vector<int> m);
+
 /// Repräsentiert ein Element in einer verketteten Liste.
 struct Element
 {

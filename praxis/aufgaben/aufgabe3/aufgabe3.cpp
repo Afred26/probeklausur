@@ -15,17 +15,15 @@ std::vector<int> Element::values()
     }
     else
     {
-        std::vector<int> result1 = {this->value};
-        std::vector<int> result2 = next->values();
-        append(result1, result2);
-        return result1;
+        return append({this->value}, next->values());
     }
 }
 
-bool append(std::vector<int> &n, std::vector<int> m)
+std::vector<int> append(std::vector<int> n, std::vector<int> m)
 {
     for (int i = 0; i < m.size(); i++)
     {
         n.push_back(m.at(i));
     }
+    return n;
 }
