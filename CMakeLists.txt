@@ -5,7 +5,7 @@ Include(FetchContent)
 project("TEIT24A-Inf2-Probeklausur")
 
 set(CMAKE_COMPILE_WARNING_AS_ERROR OFF)
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 23)
 
 FetchContent_Declare(
   Catch2
