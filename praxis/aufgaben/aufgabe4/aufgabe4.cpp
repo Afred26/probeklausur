@@ -8,6 +8,21 @@
 // enthalten. Die Reihefolge der Elemente muss dabei nicht gleich sein.
 bool same_elements(std::vector<int> a, std::vector<int> b)
 {
-    // TODO
-    return false;
+    if (a.size() != b.size())
+    {
+        return false;
+    }
+    else
+    {
+        std::sort(a.begin(), a.end());
+        std::sort(b.begin(), b.end());
+        for (int i = 0; i < a.size(); i++)
+        {
+            if (a.at(i) != b.at(i))
+            {
+                return false;
+            }
+        }
+    }
+    return true;
 }
