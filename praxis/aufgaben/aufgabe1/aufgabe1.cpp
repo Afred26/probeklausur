@@ -9,7 +9,7 @@ bool is_sorted_ascending(std::vector<int> const &v)
 {
     for (int i = 0; i + 1 < v.size(); i++)
     {
-        if (v.at(i) >= v.at(i + 1))
+        if (v.at(i) > v.at(i + 1))
         {
             return false;
         }
