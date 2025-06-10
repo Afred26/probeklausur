@@ -4,10 +4,13 @@
 #include <cstddef>
 #include <vector>
 
+/// fügt vector m an vector n an.
+bool append(std::vector<int> &n, std::vector<int> m);
 /// Repräsentiert ein Element in einer verketteten Liste.
-struct Element {
+struct Element
+{
     int value;
-    Element* next;
+    Element *next;
 
     /// Liefert `true`, wenn `this` ein Dummy, also this->next == nullptr ist.
     bool is_empty() { return next == nullptr; }
