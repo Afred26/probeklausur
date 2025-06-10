@@ -5,21 +5,19 @@
 #include <string>
 
 /// Repräsentiert einen Knoten in einem binären Suchbaum.
-struct Node {
+struct Node
+{
     int key;
     int value;
-    Node* left = nullptr;
-    Node* right = nullptr;
+    Node *left = nullptr;
+    Node *right = nullptr;
 
     /// Konstruiert einen neuen leeren Node.
     Node() = default;
 
     /// Konstruiert ein neues Node-Objekt mit dem gegebenen Schlüssel und Wert.
     Node(int key_, int value_)
-        : key(key_)
-        , value(value_)
-        , left(new Node())
-        , right(new Node())
+        : key(key_), value(value_), left(new Node()), right(new Node())
     {
     }
 
@@ -34,7 +32,8 @@ struct Node {
     {
         key = key_;
         value = value_;
-        if (is_empty()) {
+        if (is_empty())
+        {
             left = new Node();
             right = new Node();
         }
@@ -43,13 +42,16 @@ struct Node {
     /// Fügt einen neuen Knoten in den Baum ein.
     void insert(int key_, int value_)
     {
-        if (is_empty()) {
+        if (is_empty())
+        {
             return set(key_, value_);
         }
-        if (key_ <= key) {
+        if (key_ <= key)
+        {
             return left->insert(key_, value_);
         }
-        if (key_ > key) {
+        if (key_ > key)
+        {
             return right->insert(key_, value_);
         }
         set(key_, value_);
@@ -62,6 +64,8 @@ struct Node {
     /// Ist der gesuchte Knoten der Wurzelknoten, wird ein leerer String
     /// geliefert. Wenn der Knoten nicht gefunden wird, wird ein "X" geliefert.
     std::string path(int key_);
+
+    std::string find(int key_);
 };
 
 #endif
